@@ -31,11 +31,15 @@ public class Aplicacao {
         
          //new Aplicacao().salvarApartamentos();
         // new Aplicacao().salvarTerrenos();
-         //new Aplicacao().salvarClientes();
+         new Aplicacao().salvarClientes();
          
          Telalogin telalogin =new Telalogin();
           
+         
          telalogin.setVisible(true);
+         
+         
+         
          telalogin.setLocationRelativeTo(null);
           
                  
