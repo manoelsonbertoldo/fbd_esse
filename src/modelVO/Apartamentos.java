@@ -21,6 +21,8 @@ public class Apartamentos extends Imoveis{
     private int proprietario_id;
     private int imoveis_id;
     private Predios predios;
+    private Proprietarios proprietarios;
+    private Imoveis imoveis;
 
     public Predios getPredios() {
         return predios;
@@ -29,8 +31,6 @@ public class Apartamentos extends Imoveis{
     public void setPredios(Predios predios) {
         this.predios = predios;
     }
-    private Proprietarios proprietarios;
-    private Imoveis imoveis;
 
     public int getEnderecos_id() {
         return enderecos_id;

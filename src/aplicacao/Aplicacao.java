@@ -18,6 +18,11 @@ import modelVO.Predios;
 import modelVO.Proprietarios;
 import modelVO.Terrenos;
 import modelVO.Vendas;
+import view.CadApartamento;
+import view.CadCasas;
+import view.CadTerreno;
+import view.TelaCadastro;
+import view.TelaPrincipal;
 import view.Telalogin;
 
 
@@ -27,20 +32,32 @@ import view.Telalogin;
  */
 public class Aplicacao {
     public static void main(String[] args) {
-         
-        
+        CadTerreno cadTer=new CadTerreno();
+         cadTer.setVisible(true);
+         cadTer.setLocationRelativeTo(null);
+         cadTer.setTitle("cadastros de Terrenos");
+CadApartamento cadApartamentos=new CadApartamento();
+cadApartamentos.setVisible(true);
+cadApartamentos.setLocationRelativeTo(null);
+cadApartamentos.setTitle("Cadastros de Apartamentos");
+CadCasas cadCasas=new CadCasas();
+cadCasas.setVisible(true);
+cadCasas.setLocationRelativeTo(null);
+cadCasas.setTitle("Cadastros de Casas");
          //new Aplicacao().salvarApartamentos();
         // new Aplicacao().salvarTerrenos();
-         new Aplicacao().salvarClientes();
+         //new Aplicacao().salvarClientes();
          
          Telalogin telalogin =new Telalogin();
-          
-         
+         TelaPrincipal  telaPrincipal=new TelaPrincipal();
+        TelaCadastro telaCadastro=new TelaCadastro();
          telalogin.setVisible(true);
+         telaPrincipal.setVisible(true);
+        telaCadastro.setVisible(true);
          
-         
-         
+         telaCadastro.setLocationRelativeTo(null);
          telalogin.setLocationRelativeTo(null);
+         telaPrincipal.setLocationRelativeTo(null);
           
                  
        
