@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author manoelson
@@ -18,6 +20,15 @@ public class CadCasas extends javax.swing.JFrame {
         initComponents();
         
     }
+
+    public JButton getSalvarButton() {
+        return SalvarButton;
+    }
+
+    public JButton getVoltarButton() {
+        return VoltarButton;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,15 +76,16 @@ public class CadCasas extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         ufTerTextField = new javax.swing.JTextField();
-        sairTerButton = new javax.swing.JButton();
-        salvarTerButton = new javax.swing.JButton();
-        voltarTerButton = new javax.swing.JButton();
+        SalvarButton = new javax.swing.JButton();
+        VoltarButton = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         areaTerTextField1 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         larTerTextField1 = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         munTerTextField1 = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,17 +143,24 @@ public class CadCasas extends javax.swing.JFrame {
             }
         });
 
-        sairTerButton.setText("Sair");
+        SalvarButton.setText("Salvar");
+        SalvarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarButtonActionPerformed(evt);
+            }
+        });
 
-        salvarTerButton.setText("Salvar");
-
-        voltarTerButton.setText("Voltar");
+        VoltarButton.setText("Voltar");
 
         jLabel18.setText("Garagens:");
 
         jLabel20.setText("Cozinhas:");
 
         jLabel21.setText("Registo Imovél:");
+
+        jRadioButton1.setText("Venda");
+
+        jRadioButton2.setText("Alugar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -207,26 +226,19 @@ public class CadCasas extends javax.swing.JFrame {
                                     .addComponent(NomeProTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel20)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(larTerTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel10)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(CompTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(voltarTerButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(salvarTerButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(sairTerButton))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(jLabel20)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(larTerTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(jLabel10)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(CompTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(larTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,9 +248,19 @@ public class CadCasas extends javax.swing.JFrame {
                                         .addComponent(areaTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(5, 5, 5)
+                                        .addGap(5, 5, 5))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jRadioButton1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jRadioButton2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                                        .addComponent(VoltarButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(areaTerTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(SalvarButton)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,9 +350,10 @@ public class CadCasas extends javax.swing.JFrame {
                     .addComponent(larTerTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(salvarTerButton)
-                    .addComponent(sairTerButton)
-                    .addComponent(voltarTerButton))
+                    .addComponent(SalvarButton)
+                    .addComponent(VoltarButton)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -362,6 +385,10 @@ public class CadCasas extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void SalvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalvarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -416,6 +443,8 @@ public class CadCasas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CompTerTextField;
     private javax.swing.JTextField NomeProTerTextField;
+    private javax.swing.JButton SalvarButton;
+    private javax.swing.JButton VoltarButton;
     private javax.swing.JTextField areaTerTextField;
     private javax.swing.JTextField areaTerTextField1;
     private javax.swing.JTextField cepPropTerTextField;
@@ -447,6 +476,8 @@ public class CadCasas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField larTerTextField;
     private javax.swing.JTextField larTerTextField1;
     private javax.swing.JTextField munPropterTextField;
@@ -454,11 +485,8 @@ public class CadCasas extends javax.swing.JFrame {
     private javax.swing.JTextField munTerTextField1;
     private javax.swing.JTextField numPropTerTextField4;
     private javax.swing.JTextField numTerjTextField;
-    private javax.swing.JButton sairTerButton;
-    private javax.swing.JButton salvarTerButton;
     private javax.swing.JTextField ufPropTerTextField;
     private javax.swing.JTextField ufTerTextField;
     private javax.swing.JTextField valorTerTextField;
-    private javax.swing.JButton voltarTerButton;
     // End of variables declaration//GEN-END:variables
 }

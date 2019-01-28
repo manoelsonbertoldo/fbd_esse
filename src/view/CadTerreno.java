@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author manoelson
@@ -17,6 +19,17 @@ public class CadTerreno extends javax.swing.JFrame {
     public CadTerreno() {
         initComponents();
     }
+
+    public JButton getVoltarButton() {
+        return VoltarButton;
+    }
+
+    public JButton getSalvarButton() {
+        return salvarButton;
+    }
+
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,7 +56,7 @@ public class CadTerreno extends javax.swing.JFrame {
         cepPropTerTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         munPropterTextField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        voltar1Button = new javax.swing.JButton();
         ufPropTerTextField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -62,13 +75,14 @@ public class CadTerreno extends javax.swing.JFrame {
         cepTerTextField = new javax.swing.JTextField();
         munTerTextField = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        VoltarButton = new javax.swing.JButton();
         ufTerTextField = new javax.swing.JTextField();
-        sairTerButton = new javax.swing.JButton();
-        salvarTerButton = new javax.swing.JButton();
-        voltarTerButton = new javax.swing.JButton();
+        salvarButton = new javax.swing.JButton();
+        voltarButton = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         CompTerTextField1 = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,10 +108,10 @@ public class CadTerreno extends javax.swing.JFrame {
 
         jLabel8.setText("Município:");
 
-        jButton1.setText("UF:");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        voltar1Button.setText("UF:");
+        voltar1Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                voltar1ButtonActionPerformed(evt);
             }
         });
 
@@ -125,10 +139,10 @@ public class CadTerreno extends javax.swing.JFrame {
 
         jLabel17.setText("Município:");
 
-        jButton2.setText("UF:");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        VoltarButton.setText("UF:");
+        VoltarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                VoltarButtonActionPerformed(evt);
             }
         });
 
@@ -138,11 +152,9 @@ public class CadTerreno extends javax.swing.JFrame {
             }
         });
 
-        sairTerButton.setText("Sair");
+        salvarButton.setText("Salvar");
 
-        salvarTerButton.setText("Salvar");
-
-        voltarTerButton.setText("Voltar");
+        voltarButton.setText("Voltar");
 
         jLabel18.setText("Registro do Imóvel:");
 
@@ -152,6 +164,10 @@ public class CadTerreno extends javax.swing.JFrame {
             }
         });
 
+        jRadioButton1.setText("Venda");
+
+        jRadioButton2.setText("Alugar");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -160,20 +176,24 @@ public class CadTerreno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(voltarTerButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(salvarTerButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(sairTerButton))
-                            .addComponent(endTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(endTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(areaTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(15, 15, 15))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(areaTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)))
+                                .addComponent(jRadioButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(voltarButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(salvarButton)))
                         .addGap(32, 32, 32))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +202,7 @@ public class CadTerreno extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(munTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(22, 22, 22)
-                                .addComponent(jButton1)
+                                .addComponent(voltar1Button)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ufTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -207,7 +227,7 @@ public class CadTerreno extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(munPropterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)
+                                .addComponent(VoltarButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ufPropTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -284,7 +304,7 @@ public class CadTerreno extends javax.swing.JFrame {
                     .addComponent(ufPropTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(munPropterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(jButton2))
+                    .addComponent(VoltarButton))
                 .addGap(12, 12, 12)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
@@ -315,13 +335,14 @@ public class CadTerreno extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(munTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
-                    .addComponent(jButton1)
+                    .addComponent(voltar1Button)
                     .addComponent(ufTerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sairTerButton)
-                    .addComponent(salvarTerButton)
-                    .addComponent(voltarTerButton))
+                    .addComponent(salvarButton)
+                    .addComponent(voltarButton)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -339,17 +360,17 @@ public class CadTerreno extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void voltar1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltar1ButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_voltar1ButtonActionPerformed
 
     private void cpfPropTerTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfPropTerTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cpfPropTerTextField2ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_VoltarButtonActionPerformed
 
     private void CompTerTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompTerTextFieldActionPerformed
         // TODO add your handling code here:
@@ -403,6 +424,7 @@ public class CadTerreno extends javax.swing.JFrame {
     private javax.swing.JTextField CompTerTextField;
     private javax.swing.JTextField CompTerTextField1;
     private javax.swing.JTextField NomeProTerTextField;
+    private javax.swing.JButton VoltarButton;
     private javax.swing.JTextField areaTerTextField;
     private javax.swing.JTextField cepPropTerTextField;
     private javax.swing.JTextField cepTerTextField;
@@ -410,8 +432,6 @@ public class CadTerreno extends javax.swing.JFrame {
     private javax.swing.JTextField cpfPropTerTextField2;
     private javax.swing.JTextField endProTerTextField1;
     private javax.swing.JTextField endTerTextField;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -431,16 +451,18 @@ public class CadTerreno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField larTerTextField;
     private javax.swing.JTextField munPropterTextField;
     private javax.swing.JTextField munTerTextField;
     private javax.swing.JTextField numPropTerTextField4;
     private javax.swing.JTextField numTerjTextField;
-    private javax.swing.JButton sairTerButton;
-    private javax.swing.JButton salvarTerButton;
+    private javax.swing.JButton salvarButton;
     private javax.swing.JTextField ufPropTerTextField;
     private javax.swing.JTextField ufTerTextField;
     private javax.swing.JTextField valorTerTextField;
-    private javax.swing.JButton voltarTerButton;
+    private javax.swing.JButton voltar1Button;
+    private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,7 @@
  */
 package aplicacao;
 
+import Contoller.ControllerLogin;
 import fachada.Fachada;
 import fachada.IFachada;
 import modelVO.Apartamentos;
@@ -23,7 +24,7 @@ import view.CadCasas;
 import view.CadTerreno;
 import view.TelaCadastro;
 import view.TelaPrincipal;
-import view.Telalogin;
+import view.TelaLogin;
 
 
 /**
@@ -32,32 +33,35 @@ import view.Telalogin;
  */
 public class Aplicacao {
     public static void main(String[] args) {
-        CadTerreno cadTer=new CadTerreno();
-         cadTer.setVisible(true);
-         cadTer.setLocationRelativeTo(null);
-         cadTer.setTitle("cadastros de Terrenos");
-CadApartamento cadApartamentos=new CadApartamento();
-cadApartamentos.setVisible(true);
-cadApartamentos.setLocationRelativeTo(null);
-cadApartamentos.setTitle("Cadastros de Apartamentos");
-CadCasas cadCasas=new CadCasas();
-cadCasas.setVisible(true);
-cadCasas.setLocationRelativeTo(null);
-cadCasas.setTitle("Cadastros de Casas");
-         //new Aplicacao().salvarApartamentos();
-        // new Aplicacao().salvarTerrenos();
-         //new Aplicacao().salvarClientes();
-         
-         Telalogin telalogin =new Telalogin();
-         TelaPrincipal  telaPrincipal=new TelaPrincipal();
-        TelaCadastro telaCadastro=new TelaCadastro();
-         telalogin.setVisible(true);
-         telaPrincipal.setVisible(true);
-        telaCadastro.setVisible(true);
-         
-         telaCadastro.setLocationRelativeTo(null);
-         telalogin.setLocationRelativeTo(null);
-         telaPrincipal.setLocationRelativeTo(null);
+        TelaLogin telaLogin= new TelaLogin();
+        ControllerLogin controllerLogin=new ControllerLogin(telaLogin);
+        
+//        CadTerreno cadTer=new CadTerreno();
+//         cadTer.setVisible(true);
+//         cadTer.setLocationRelativeTo(null);
+//         cadTer.setTitle("cadastros de Terrenos");
+//CadApartamento cadApartamentos=new CadApartamento();
+//cadApartamentos.setVisible(true);
+//cadApartamentos.setLocationRelativeTo(null);
+//cadApartamentos.setTitle("Cadastros de Apartamentos");
+//CadCasas cadCasas=new CadCasas();
+//cadCasas.setVisible(true);
+//cadCasas.setLocationRelativeTo(null);
+//cadCasas.setTitle("Cadastros de Casas");
+//         //new Aplicacao().salvarApartamentos();
+//        // new Aplicacao().salvarTerrenos();
+//         //new Aplicacao().salvarClientes();
+//         
+//         TelaLogin telalogin =new TelaLogin();
+//         TelaPrincipal  telaPrincipal=new TelaPrincipal();
+//        TelaCadastro telaCadastro=new TelaCadastro();
+//         telalogin.setVisible(true);
+//         telaPrincipal.setVisible(true);
+//        telaCadastro.setVisible(true);
+//         
+//         telaCadastro.setLocationRelativeTo(null);
+//         telalogin.setLocationRelativeTo(null);
+//         telaPrincipal.setLocationRelativeTo(null);
           
                  
        

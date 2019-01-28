@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author manoelson
@@ -17,6 +19,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
     }
+
+    public JButton getAlugueisButton() {
+        return AlugueisButton;
+    }
+
+    public JButton getCadastrarButton() {
+        return CadastrarButton;
+    }
+
+    public JButton getTransButton() {
+        return TransButton;
+    }
+
+    public JButton getBuscarButton() {
+        return buscarButton;
+    }
+
+    public JButton getVendasButton() {
+        return vendasButton;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
