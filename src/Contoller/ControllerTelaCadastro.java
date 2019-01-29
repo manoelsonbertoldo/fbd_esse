@@ -34,6 +34,7 @@ public class ControllerTelaCadastro implements ActionListener{
 
     public ControllerTelaCadastro(TelaCadastro telaCadastro) {
         this.telaCadastro = telaCadastro;
+        
          telaCadastro.setResizable(false);
         telaCadastro.setLocationRelativeTo(null);
         this.cadApartamento=new CadApartamento();

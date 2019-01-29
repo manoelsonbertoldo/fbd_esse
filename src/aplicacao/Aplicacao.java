@@ -24,7 +24,8 @@ import view.CadCasas;
 import view.CadTerreno;
 import view.TelaCadastro;
 import view.TelaPrincipal;
-import view.TelaLogin;
+
+import view.TelaLogin1;
 
 
 /**
@@ -33,7 +34,7 @@ import view.TelaLogin;
  */
 public class Aplicacao {
     public static void main(String[] args) {
-        TelaLogin telaLogin= new TelaLogin();
+        TelaLogin1 telaLogin= new TelaLogin1();
         ControllerLogin controllerLogin=new ControllerLogin(telaLogin);
         
 //        CadTerreno cadTer=new CadTerreno();

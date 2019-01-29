@@ -7,7 +7,8 @@ package Contoller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.TelaLogin;
+
+import view.TelaLogin1;
 import view.TelaPrincipal;
 
 /**
@@ -15,11 +16,11 @@ import view.TelaPrincipal;
  * @author manoelson
  */
 public class ControllerLogin implements ActionListener{
-    private TelaLogin telaLogin;
+    private TelaLogin1 telaLogin;
     private TelaPrincipal telaPrincipal;
     private ControllerPrincipal controllerPrincipal;
 
-    public ControllerLogin(TelaLogin telaLogin) {
+    public ControllerLogin(TelaLogin1 telaLogin) {
         this.telaLogin = telaLogin;
         telaLogin.setVisible(true);
         telaLogin.setResizable(false);

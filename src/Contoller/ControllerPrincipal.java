@@ -10,10 +10,9 @@ import java.awt.event.ActionListener;
 import view.TelaAlugueis;
 import view.TelaBuscar;
 import view.TelaCadastro;
-import view.TelaLogin;
 import view.TelaPrincipal;
 import view.TelaTransacoes;
-import view.TelaVendas;
+import view.TelaVenda;
 
 /**
  *
@@ -31,9 +30,27 @@ public class ControllerPrincipal implements ActionListener{
     
     private TelaCadastro telaCadastro;
     private TelaAlugueis telaAlugueis;
-    private TelaVendas telaVendas;
+    private TelaVenda telaVendas;
     private TelaTransacoes telaTransacoes;
     private TelaBuscar telaBuscar;
+    public ControllerPrincipal(){
+    this.telaAlugueis= new TelaAlugueis();
+        this.controllerTelaAlugueis = new ControllerTelaAlugueis();
+        this.telaCadastro = new TelaCadastro();
+        this.controllerTelaCadastro =new ControllerTelaCadastro(telaCadastro);
+        this.telaBuscar =new TelaBuscar();
+        this.controllerTelaBusca =new ControllerTelaBusca(telaBuscar);
+        this.telaVendas=new TelaVenda();
+        this.controllerTelaVendas=new ControllerTelaVendas();
+        this.telaTransacoes=new TelaTransacoes();
+        this.controllerTelaTransacao=new ControllerTelaTransacao();
+        
+        this.telaPrincipal.getCadastrarButton().addActionListener(this);
+        this.telaPrincipal.getTransButton().addActionListener(this);
+        this.telaPrincipal.getVendasButton().addActionListener(this);
+        this.telaPrincipal.getAlugueisButton().addActionListener(this);
+        this.telaPrincipal.getBuscarButton().addActionListener(this);
+        }
     public ControllerPrincipal(TelaPrincipal telaPrincipal) {
         
         this.telaPrincipal = telaPrincipal;
@@ -46,7 +63,7 @@ public class ControllerPrincipal implements ActionListener{
         this.controllerTelaCadastro =new ControllerTelaCadastro(telaCadastro);
         this.telaBuscar =new TelaBuscar();
         this.controllerTelaBusca =new ControllerTelaBusca(telaBuscar);
-        this.telaVendas=new TelaVendas();
+        this.telaVendas=new TelaVenda();
         this.controllerTelaVendas=new ControllerTelaVendas();
         this.telaTransacoes=new TelaTransacoes();
         this.controllerTelaTransacao=new ControllerTelaTransacao();
@@ -66,9 +83,11 @@ public class ControllerPrincipal implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==telaPrincipal.getBuscarButton()){
             telaBuscar.setVisible(true);
+           
             telaPrincipal.setVisible(false);//To change body of generated methods, choose Tools | Templates.
     }
         if(e.getSource()==telaPrincipal.getCadastrarButton()){
+            
             telaCadastro.setVisible(true);
             telaPrincipal.setVisible(false);//To change body of generated methods, choose Tools | Templates.
     }
